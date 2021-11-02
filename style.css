@@ -1,0 +1,36 @@
+@font-face {
+  font-family:mainFont;
+  src:url(mai10.otf);
+}
+          /*V is bad*/
+@keyframes zoom{
+               50%{transform: scale(1.2,1.2);}
+              100%{transform: scale(1.0,1.0);}
+            }
+body {
+  font-family:mainFont;
+}
+.score {
+  font-family:mainFont;
+}
+body {
+  background-color:grey;
+}
+.play{
+  border-color:lime;
+}
+button {
+  background-color:grey;
+  color:green;
+  font-family:mainFont;
+  border:0;
+  font-size:20px;
+  animation:zoom 1000ms linear infinite;
+}
+button:hover{
+  color:#023202;
+  animation:zoom 1001ms linear infinite;
+}
+canvas {
+  font-family:mainFont;
+}

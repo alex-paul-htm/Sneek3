@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+<title>Sneek3</title>
+<style>
+    canvas {background: black}
+</style>
+
+<script src="snake.js"></script>
+</head>
+    <center>
+<body onload="init();">
+  <div class="score">Apples Eaten: <p id="score">0</p></div>
+    <canvas class="play"id="myCanvas" width="450" height="450">
+    </canvas>
+    <div id="newGame" style="display:none;" onClick="window.location.reload();"><button>New Game</button></div>
+</body>
+</center>
+</html>
