@@ -7,8 +7,9 @@ var ctx;
 var head;
 var apple;
 var ball;
-var Score = 0;
+var tail; //unused, so far...
 
+var Score = 0;
 var dots;
 var apple_x;
 var apple_y;
@@ -22,7 +23,7 @@ var inGame = true;
 const DOT_SIZE = 10;
 const ALL_DOTS = 900;
 const MAX_RAND = 29;
-const DELAY = 140;
+const DELAY = 135;
 const C_HEIGHT = 450;
 const C_WIDTH  = 450;
 
@@ -64,12 +65,12 @@ function loadImages() {
 
 function createSnake() {
 
-    dots = 3;
-
+    dots = 4;
     for (var z = 0; z < dots; z++) {
         x[z] = 50 - z * 10;
         y[z] = 50;
     }
+    
 }
 
 function checkApple() {
@@ -88,7 +89,6 @@ function doDrawing() {
     if (inGame) {
 
         ctx.drawImage(apple, apple_x, apple_y);
-
         for (var z = 0; z < dots; z++) {
             
             if (z == 0) {
@@ -134,18 +134,26 @@ function move() {
 
     if (leftDirection) {
         x[0] -= DOT_SIZE;
+        head = new Image();
+          head.src = 'headr.png';
     }
 
     if (rightDirection) {
         x[0] += DOT_SIZE;
+        head = new Image();
+          head.src = 'headrr.png';
     }
 
     if (upDirection) {
         y[0] -= DOT_SIZE;
+        head = new Image();
+        head.src = 'favicon.png';
     }
 
     if (downDirection) {
         y[0] += DOT_SIZE;
+        head = new Image();
+        head.src = 'headd.png';
     }
 }
 
