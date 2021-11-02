@@ -108,9 +108,9 @@ function gameOver() {
     ctx.fillStyle = 'white';
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
-    ctx.font = 'normal bold 18px serif';
+    ctx.font = "30px Comic Sans MS";
     
-    ctx.fillText('Game over', C_WIDTH/2, C_HEIGHT/2);
+    ctx.fillText('Sneek did a died', C_WIDTH/2, C_HEIGHT/2);
     newGame();
 }
 
