@@ -7,12 +7,13 @@ var ctx;
 var head;
 var apple;
 var ball;
-var tail; //unused, so far...
+var hurt;
 
-var Score = 0;
 var dots;
 var apple_x;
 var apple_y;
+var Score;
+var p;
 
 var leftDirection = false;
 var rightDirection = true;
@@ -23,9 +24,9 @@ var inGame = true;
 const DOT_SIZE = 10;
 const ALL_DOTS = 900;
 const MAX_RAND = 29;
-const DELAY = 135;
+const DELAY = 140;
 const C_HEIGHT = 450;
-const C_WIDTH  = 450;
+const C_WIDTH = 450;
 
 const LEFT_KEY = 37;
 const RIGHT_KEY = 39;
@@ -36,23 +37,35 @@ const D = 68;
 const W = 87;
 const S = 83;
 
+
+
 var x = new Array(ALL_DOTS);
 var y = new Array(ALL_DOTS);
 
 
 function init() {
-    
     canvas = document.getElementById('myCanvas');
     ctx = canvas.getContext('2d');
-
+    Score = 0;
+    
     loadImages();
     createSnake();
     locateApple();
     setTimeout("gameCycle()", DELAY);
 }
-
+	function playMusic() {
+		document.getElementById('music').play();
+	}
+	function pauseMusic(){
+	  document.getElementById('music').pause();
+	}
+		function hurt() {
+		document.getElementById('hurt').play();
+	}
+		function collect() {
+		document.getElementById('collect').play();
+	}
 function loadImages() {
-    
     head = new Image();
     head.src = 'head.png';
     
@@ -62,6 +75,9 @@ function loadImages() {
     apple = new Image();
     apple.src = 'apple.png';
 }
+
+
+
 
 function createSnake() {
 
@@ -77,10 +93,11 @@ function checkApple() {
 
     if ((x[0] == apple_x) && (y[0] == apple_y)) {
 
-        dots++;
+        dots+= 1;
         locateApple();
     }
 }
+
 
 function doDrawing() {
     
@@ -95,33 +112,39 @@ function doDrawing() {
                 ctx.drawImage(head, x[z], y[z]);
             } else {
                 ctx.drawImage(ball, x[z], y[z]);
+                
             }
         }
     } else {
-
-        gameOver();
+      // head = new Image();
+      // head.src = 'dedr.png';
+       gameOver();
     }
 }
 
 function gameOver() {
     
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = 'green';
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
     ctx.font = "30px Comic Sans MS";
-    
-    ctx.fillText('Sneek did a died', C_WIDTH/2, C_HEIGHT/2);
+    pauseMusic();
+    hurt();
+    ctx.fillText('Sneek did a ouch', C_WIDTH/2, C_HEIGHT/2);
     newGame();
 }
+
 
 function checkApple() {
 
     if ((x[0] == apple_x) && (y[0] == apple_y)) {
 
-        dots++;
+        dots += 1;
         locateApple();
         Score += 1;
         document.getElementById("score").innerHTML = Score;
+        playMusic();
+        collect();
     }
 }
 
@@ -195,7 +218,6 @@ function locateApple() {
 function gameCycle() {
     
     if (inGame) {
-
         checkApple();
         checkCollision();
         move();
@@ -206,6 +228,21 @@ function gameCycle() {
 function newGame() {
   document.getElementById('newGame').style.display = "block";
 }
+function drawBoard(){
+    for (var x = 0; x <= DOT_SIZE; x += 40) {
+        context.moveTo(0.5 + x + 10, 10);
+        context.lineTo(0.5 + x + 10, DOT_SIZE + 10);
+    }
+
+    for (var x = 0; x <= DOT_SIZE; x += 40) {
+        ctx.moveTo(10, 0.5 + x + 10);
+        ctx.lineTo(DOT_SIZE + 10, 0.5 + x + 10);
+    }
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+    
+}
+
 
 onkeydown = function(e) {
     

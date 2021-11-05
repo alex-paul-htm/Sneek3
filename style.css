@@ -2,36 +2,63 @@
   font-family:mainFont;
   src:url(mai10.otf);
 }
-          /*V is bad*/
+          /*zoom is bad*/
 @keyframes zoom{
-               50%{transform: scale(1.2,1.2);}
-              100%{transform: scale(1.0,1.0);}
+                0%{transform: rotate(-8deg); transform: skew(-20deg)}
+               50%{transform: scale(1.2,1.2); color:#023202;}
+              100%{transform: scale(1.0,1.0); transform: rotate(8deg); transform: skew(20deg)}
             }
 body {
   font-family:mainFont;
 }
 .score {
   font-family:mainFont;
+  color:green;
 }
 body {
-  background-color:grey;
+  background-color:#171717;
 }
 .play{
-  border-color:lime;
-}
-button {
-  background-color:grey;
+  border-color:grey;
+}.new {
+  background-color:#171717;
   color:green;
   font-family:mainFont;
   border:0;
   font-size:20px;
-  animation:zoom 1000ms linear infinite;
 }
-button:hover{
+.new:hover{
   color:#023202;
-  animation:zoom 1001ms linear infinite;
+}
+.new:onuse{
+  
+}
+.musicB{
+  background-color:#171717;
+  color:green;
+  font-family:mainFont;
+  border:0;
+  font-size:15;
+}
+.musicB:hover{
+  background-color:black;
+  color:#023202;
 }
 canvas {
   font-family:mainFont;
   background: black;
+  border-style:solid;
+  border-width:10px;
+  border-color:grey;
+}
+h1{
+  font-family:mainfont;
+  color:green;
+  border:0;
+  font-size:1.5cm;
+  animation:zoom 1000ms linear infinite;
+  animation-direction:alternate;
+}
+.bruh {
+  color:green;
 }

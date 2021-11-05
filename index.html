@@ -6,12 +6,25 @@
 <title>Sneek3</title>
 <script src="snake.js"></script>
 </head>
+<audio id="music" src="music.mp3" preload="auto"></audio>
+<audio id="hurt" src="Hurt.mp3" preload="auto"></audio>
+<audio id="collect" src="appleEat.mp3"></audio>
+<div class="bruh">
+<details>
+<summary>debug menu</summary>
+<button onClick="playMusic();" class="musicB">force music, happens on chrome lol</button>
+<button onClick="hurt();" class="musicB">force hurt</button>
+<button onclick='collect();'>force collect</button>
+</details>
+</div>
     <center>
-<body onload="init();">
+      <h1>SNEEK3</h1>
+<body onload="init();" >
   <div class="score">Apples Eaten: <p id="score">0</p></div>
+  <p id="newGame" style="display:none;" onClick="window.location.reload();"><button class="new">New Game</button></p>
     <canvas class="play"id="myCanvas" width="450" height="450">
     </canvas>
-    <div id="newGame" style="display:none;" onClick="window.location.reload();"><button>New Game</button></div>
+
 </body>
 </center>
 </html>
