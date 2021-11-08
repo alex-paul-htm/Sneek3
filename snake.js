@@ -53,6 +53,7 @@ function init() {
     locateApple();
     setTimeout("gameCycle()", DELAY);
 }
+
 	function playMusic() {
 		document.getElementById('music').play();
 	}
@@ -134,7 +135,13 @@ function gameOver() {
     newGame();
 }
 
-
+function cheat(amount){
+  
+  score+= amount;
+  document.getElementById("score").innerHTML = Score;
+  dots+= amount;
+ 
+}
 function checkApple() {
 
     if ((x[0] == apple_x) && (y[0] == apple_y)) {
@@ -170,7 +177,7 @@ function move() {
     if (upDirection) {
         y[0] -= DOT_SIZE;
         head = new Image();
-        head.src = 'favicon.png';
+        head.src = 'headu.png';
     }
 
     if (downDirection) {

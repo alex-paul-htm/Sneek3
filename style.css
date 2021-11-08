@@ -4,12 +4,13 @@
 }
           /*zoom is bad*/
 @keyframes zoom{
-                0%{transform: rotate(-8deg); transform: skew(-20deg)}
+                0%{transform: rotate(-8deg); /*transform: skew(-20deg)*/}
                50%{transform: scale(1.2,1.2); color:#023202;}
-              100%{transform: scale(1.0,1.0); transform: rotate(8deg); transform: skew(20deg)}
+              100%{transform: scale(1.0,1.0); transform: rotate(8deg); /*transform: skew(20deg)*/}
             }
 body {
   font-family:mainFont;
+  overflow: hidden;
 }
 .score {
   font-family:mainFont;
@@ -55,10 +56,13 @@ h1{
   font-family:mainfont;
   color:green;
   border:0;
-  font-size:1.5cm;
+  font-size:1cm;
   animation:zoom 1000ms linear infinite;
   animation-direction:alternate;
 }
 .bruh {
   color:green;
+}
+.cheats{
+  color:#171717;
 }
