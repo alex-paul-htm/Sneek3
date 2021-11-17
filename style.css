@@ -1,6 +1,6 @@
 @font-face {
   font-family:mainFont;
-  src:url(mai10.otf);
+  src:url(kingdom-main-v1.ttf);
 }
           /*zoom is bad*/
 @keyframes zoom{
@@ -31,9 +31,9 @@ body {
 .new:hover{
   color:#023202;
 }
-.new:onuse{
+/* .new:onuse{
   
-}
+} */
 .musicB{
   background-color:#171717;
   color:green;
@@ -56,7 +56,7 @@ h1{
   font-family:mainfont;
   color:green;
   border:0;
-  font-size:1cm;
+  font-size:1.5cm;
   animation:zoom 1000ms linear infinite;
   animation-direction:alternate;
 }
