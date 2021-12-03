@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<link rel="shortcut icon" href="favicon.png">
+<center>
+  <div class="titleText" height="500">
+<h1>Sneek3</h1>
+<p1 id="splash">placeholder text</p1>
+</div>
+<p>
+<a href="sneek.html"><button style="background-color:grey;
+      border-color:black;
+      color:white;
+      border-width:3px;
+      font-family:mainFont;" class="titleB">play regular version</button></a>
+<p><a href="sneek3mobile.html"><button style="      border-color:black;
+      background-color:grey;
+      color:white;
+      border-width:3px;
+      font-family:mainFont;"class="titleB">play mobile version</button></a></p>
+<p><a href="credits.html"><button style="      border-color:black;
+      background-color:grey;
+      color:white;
+      border-width:3px;
+      font-family:mainFont;"class="titleB">credits</button></a></p>
+</p>
+</center>
+<body onload="displaySplash(10);"></body>
+<style>
+  @font-face {
+  font-family:mainFont;
+  src:url(mai10.otf);
+}
+  h1{
+    font-size:55px;
+    font-family:mainFont;
+    font-weight:4px;
+    color:green;
+  }
+  p1{
+    font-family:mainFont;
+    color:yellow;
+    font-size:12px;
+    position:absolute;
+    top:75px;
+    right:400;
+    transform: rotate(-35deg);
+  }
+  body{
+    background-color:#171717;
+  .titleB{
+      
+    }
+  }
+</style>
+<script>
+  var splashText = ["now with pancakes or waffles", "music by Comrade_alyx", "does anybody read these","Your mother", "dreom", "milk gang good", "orange juice cringe", "is That mr.Yeast!", "george is still unable to be located", "dreer", "yeeeeeeeeeeet"];
+  function displaySplash(p){
+    var splashNum = Math.floor(Math.random() * p);
+    //alert(splashNum); //for debugging
+    var display = splashText[splashNum];
+    document.getElementById("splash").innerHTML =splashText[splashNum];
+  }
+</script>

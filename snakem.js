@@ -20,11 +20,11 @@ var downDirection = false;
 var inGame = true;
 //gameloop vars
 const dotSize = 10;
-const allDots = 900;
+const allDots = 400;
 const maxRand = 29;
-const DELAY = 140;
-const cHeight = 450;
-const cWidth = 450;
+const DELAY = 120;
+const cHeight = 300;
+const cWidth = 300;
 //control vars
 const LEFT_KEY = 65;
 const RIGHT_KEY = 68;
@@ -130,7 +130,7 @@ function gameOver() {
     ctx.fillStyle = 'green';
     ctx.textBaseline = 'middle';
     ctx.textAlign = 'center';
-    ctx.font = "30px Comic Sans MS";
+    ctx.font = "20px Comic Sans MS";
     pauseMusic();
     hurt();
     ctx.fillText('Sneek did a ouch', cWidth/2, cHeight/2);
@@ -297,6 +297,29 @@ onkeydown = function(e) {
         leftDirection = false;
     }
 };
+// = left, 1 = right, 2 = up, 3 = down,
+function buttonMove(dir){
+  if(dir == 0 && (!rightDirection)){
+     leftDirection = true;
+        upDirection = false;
+        downDirection = false;
+  }
+if(dir == 1 && (!leftDirection)){
+  rightDirection = true;
+        upDirection = false;
+        downDirection = false;
+}
+if(dir == 2 && (!upDirection)){
+          downDirection = true;
+        rightDirection = false;
+        leftDirection = false;
+}
+if(dir == 3 && (!downDirection)){
+   upDirection = true;
+        rightDirection = false;
+        leftDirection = false;
+}
+}
 //scraped fetures :'<,(
 // function myFunction() {
 //   var x = document.getElementById("bruh");

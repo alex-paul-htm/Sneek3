@@ -10,7 +10,6 @@
             }
 body {
   font-family:mainFont;
-  overflow: hidden;
 }
 .score {
   font-family:mainFont;
@@ -56,16 +55,18 @@ h1{
   font-family:mainfont;
   color:green;
   border:0;
-  font-size:1cm;
+  /*font-size:1cm;
   animation:zoom 1000ms linear infinite;
-  animation-direction:alternate;
+  animation-direction:alternate;*/
+}
+.pocket{
+  font-size:10px;!important
+  font-Family:mainfont;
+  
 }
 .bruh {
   color:green;
 }
 .cheats{
   color:#171717;
-}
-.or {
-  font-size:10px;
 }

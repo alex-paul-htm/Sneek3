@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="stylesheet" href="stylem.css">
+<title>Sneek3 pocket edition</title>
+<script src="snakem.js"></script>
+</head>
+<audio loop id="music" src="music.mp3" preload="auto"></audio>
+<audio id="hurt" src="Hurt.mp3" preload="auto"></audio>
+<audio id="collect" src="appleEat.mp3"></audio>
+<div class="bruh">
+  <!--<details>-->
+<!--<summary>debug menu</summary>-->
+<!--<button onClick="playMusic();" class="musicB">force music, happens on chrome lol</button>-->
+<!--<p><button onClick="hurt();" class="musicB">force hurt</button>-->
+<!--<p><button onClick='collect();' class="musicB">force collect</button>-->
+<!--<p><button onClick='init();' class="musicB">force init</button></p>-->
+<!--<p><button onClick='debugMenu();' class="musicB">force hide</button></p>-->
+<!--nothing suspicious here lol-->
+<!--<div class="cheats"><details>-->
+  <!--<summary>cheats</summary>-->
+  <!--<button onClick="cheat(1);" class="musicB">add length</button>-->
+  <!--<button onClick="cheat(5);" class="musicB">add 5 length</button>-->
+  <!--<button onClick="cheat(500);" class="musicB">add 500 length</button>-->
+  <!--the above is nothing to be concerned about just move along nothing to see here-->
+  <!--</div>-->
+<!--  </details>-->
+<!--</details>-->
+<!--</div>-->
+    <center>
+      <h1>SNEEK3 <p class="pocket">pocket edition</p></h1>
+<body onload="init();" >
+  <!--<button class="newGame"id='start' onClick='startGame();'>Start Game</button>-->
+  <div class="score">Apples Eaten: <p id="score">0</p></div>
+  <p id="newGame" style="display:none;" onClick="window.location.reload();"><button class="new">New Game</button></p>
+    <canvas class="play"id="myCanvas" width="300" height="300">
+    </canvas>
+    <p>
+<button onClick="buttonMove(0);" style="background-color:#171717; border:0;"class="movel"><img src="left.png" width="32" height="32"></button>
+<button onClick="buttonMove(3);" style="background-color:#171717; border:0;"class="moveu"><img src="up.png" width="32" height="32"></button> <!--do not question the magic svg-->
+<button onClick="buttonMove(2);" style="background-color:#171717; border:0;"class="moved"><img src="down.png" width="32" height="32"></button>
+<button onClick="buttonMove(1);" style="background-color:#171717; border:0;"class="mover"><img src="right.png" width="32" height="32"></button>
+</p>
+</center>
+</div>
+</body>
+</html>
