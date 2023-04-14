@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<link rel="shortcut icon" href="favicon.png">
+<script src="snake.js"></script>
+<title>sneek3Landing</title>
+<center>
+  <div class="titleText" height="500">
+<h1>Sneek3</h1>
+<p1 id="output">placeholder text</p1>
+</div>
+<p>
+<a href="sneek.html"><button style="background-color:grey;
+      border-color:black;
+      color:white;
+      border-width:3px;
+      font-family:mainFont;" class="titleB">play java(script) version</button></a>
+<p><a href="sneek3mobile.html"><button style="      border-color:black;
+      background-color:grey;
+      color:white;
+      border-width:3px;
+      font-family:mainFont;"class="titleB">play sleeprock version</button></a></p>
+<p><a href="tutorial.html"><button style="border-color:black;
+      background-color:grey;
+      color:white;
+      border-width:3px;
+      font-family:mainFont;"class="titleB">tutorial</button></a></p>
+<p><a href="credits.html"><button style="      border-color:black;
+      background-color:grey;
+      color:white;
+      border-width:3px;
+      font-family:mainFont;"class="titleB">credits</button></a></p>
+<p><button style="border-color:black;
+      background-color:#171717;
+      color:#171717;
+      border-width:0;
+      font-family:mainFont;" onclick="displayPhrase();">reroll splash text</button></p>
+</p>
+<details>
+  <summary>DLC</summary>
+  <a href="Jonnydlc.html">jonny dlc</a>
+</details>
+</center>
+<body onload="displayPhrase();"></body>
+<style>
+  @font-face {
+  font-family:mainFont;
+  src:url(mai10.otf);
+}
+@keyframes zoom{
+                0%{transform: rotate(-8deg); /*transform: skew(-20deg)*/}
+               50%{transform: scale(1.2,1.2); color:#023202;}
+              100%{transform: scale(1.0,1.0); transform: rotate(8deg); /*transform: skew(20deg)*/}
+            }
+  h1{
+    font-size:55px;
+    font-family:mainFont;
+    font-weight:4px;
+    color:green;
+    animation:zoom 1000ms linear infinite;
+  animation-direction:alternate;
+  }
+  p1{
+    font-family:mainFont;
+    color:yellow;
+    font-size:12px;
+    position:absolute;
+    top:75px;
+    right:400;
+    transform: rotate(-35deg);
+  }
+  body{
+    background-color:#171717;
+  }
+</style>
+<script src="text.js"></script>

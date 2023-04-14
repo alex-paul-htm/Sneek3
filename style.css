@@ -1,6 +1,6 @@
 @font-face {
   font-family:mainFont;
-  src:url(kingdom-main-v1.ttf);
+  src:url(mai10.otf);
 }
           /*zoom is bad*/
 @keyframes zoom{
@@ -10,7 +10,7 @@
             }
 body {
   font-family:mainFont;
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 .score {
   font-family:mainFont;
@@ -21,9 +21,24 @@ body {
 }
 .play{
   border-color:grey;
-}.new {
+}
+.new {
   background-color:#171717;
   color:green;
+  font-family:mainFont;
+  border:0;
+  font-size:20px;
+}
+.amongusSus {
+  background-color:#171717;
+  color:green;
+  font-family:mainFont;
+  border:0;
+  font-size:20px;
+}
+.amongusSus:hover{
+  background-color:#171717;
+  color:#023202;
   font-family:mainFont;
   border:0;
   font-size:20px;
@@ -31,8 +46,8 @@ body {
 .new:hover{
   color:#023202;
 }
-.new:onuse{
-  
+.amongusSus:onuse{
+  color:black;
 }
 .musicB{
   background-color:#171717;
@@ -59,6 +74,13 @@ h1{
   font-size:1cm;
   animation:zoom 1000ms linear infinite;
   animation-direction:alternate;
+}
+h2{
+  font-family:mainfont;
+  color:green;
+  border:0;
+  font-size:1cm;
+
 }
 .bruh {
   color:green;

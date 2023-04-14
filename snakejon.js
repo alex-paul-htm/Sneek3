@@ -18,7 +18,6 @@ var rightDirection = true;
 var upDirection = false;
 var downDirection = false;
 var inGame = true;
-var speed = 1;
 //gameloop vars
 const dotSize = 10;
 const allDots = 900;
@@ -49,7 +48,7 @@ function init() {
     Score = 0;
     
     loadImages();
-    createSneek();
+    createSnake();
     locateApple();
     setTimeout("gameCycle()", DELAY);
 }
@@ -75,13 +74,13 @@ function loadImages() {
     ball.src = 'dot.png';
     
     apple = new Image();
-    apple.src = 'apple.png';
+    apple.src = 'drug.png';
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 
 //makes mah boi sneek
-function createSneek() {
+function createSnake() {
 
     dots = 4;
     for (var z = 0; z < dots; z++) {
@@ -246,13 +245,8 @@ function newGame() {
 }
 function startGame() {
   document.getElementById('start').style.display = "none";
-  // init();
+  init();
   playMusic();
-  // setSpeed(1);
-  while (speed > 0){
-    init();
-  speed --;
-  }
 }
 //draws the E P I C board
 function drawBoard(){
@@ -312,15 +306,10 @@ onkeydown = function(e) {
 //     x.style.display = "none";
 //   }
 // }
-document.addEventListener('keyup', function(e){
-  if(e.keyCode == 13)
-    startGame();
-});
-document.addEventListener('keyup', function(e){
-  if(e.keyCode == 27)
-    window.open("sneek3landing.html", "_self")
-});
-
+// document.addEventListener('keyup', function(e){
+//   if(e.keyCode == 192)
+//     debugMenu();
+// })
 //the press r to restart button- works at anytime ;)
 document.addEventListener('keyup', function(e){
   if(e.keyCode == 82)
@@ -349,12 +338,4 @@ function goFullScreen(){
         canvas.webkitRequestFullScreen();
     else if(canvas.mozRequestFullScreen)
         canvas.mozRequestFullScreen();
-}
-function setSpeed(speedAmount){
-  speed = speedAmount;
-}
-function alertText(){
-  let multi = prompt("What speed multiplier do you want? enter a number!");
-  window.confirm("does " +multi + " seem correct to you? (ps it doesn't matter you can change it later)");
-  setSpeed(multi);
 }
